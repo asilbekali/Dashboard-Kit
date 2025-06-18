@@ -93,3 +93,21 @@ export const LogoIcon = () => {
 
     )
 }
+
+
+export const LupaIcon = () =>
+    <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_597_215)">
+            <circle cx="6.5" cy="6.5" r="5.75" stroke="#C5C7CD" strokeWidth="1.5" />
+            <path d="M11 11L15 15" stroke="#C5C7CD" stroke-width="1.5" strokeLinecap="round" />
+        </g>
+        <defs>
+            <clipPath id="clip0_597_215">
+                <rect width="20" height="20" fill="white" />
+            </clipPath>
+        </defs>
+    </svg>
+
+
+
+

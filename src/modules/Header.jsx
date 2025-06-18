@@ -29,7 +29,7 @@ const Header = () => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onBlur={handleBlur}
-            className={`rounded-[17px] border-[1px] outline-none ${showInput ? "pl-[10px] p-[5px] border-slate-200 w-[180px] focus:shadow-sm duration-300 shadow-blue-950" : "w-0 border-transparent duration-300"}`}
+            className={`bg-white rounded-[17px] border-[1px] outline-none ${showInput ? "pl-[10px] p-[5px] border-slate-200 w-[180px] focus:shadow-sm duration-300 shadow-blue-950" : "w-0 border-transparent duration-300"}`}
             type="text"
             placeholder='Searching'
           />

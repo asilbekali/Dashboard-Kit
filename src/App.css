@@ -2,19 +2,19 @@
 
 body {
     overflow: hidden;
+    background-color: rgba(55, 81, 255, 4%);
 }
 
-
-.active{
-    color: #DDE2FF;
+.active {
+    color: #dde2ff;
     background-color: rgba(159, 162, 180, 4%);
 }
 
-.active::before{
+.active::before {
     content: "";
     width: 3px;
     height: 100%;
     position: absolute;
-    background-color: #DDE2FF;
+    background-color: #dde2ff;
     left: 0;
 }

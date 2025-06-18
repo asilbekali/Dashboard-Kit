@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { LogoIcon } from '../assets/icons'
 import { navList } from '../hooks/paths'
+import NavItem from "../components/NavItem"
 
 const NavBar = () => {
   return (
@@ -13,12 +14,7 @@ const NavBar = () => {
         </Link>
       </div>
       <nav className='flex flex-col'>
-        {navList.map(item => (
-          <NavLink className={`flex items-center py-[20px] pl-[32px]`} key={item.id} to={item.path} >
-            {item.icon}
-            <span>{item.title}</span>
-          </NavLink>
-        ))}
+        {navList.map(item => <NavItem key={item.id} item={item}/>)}
       </nav>
     </div>
   )

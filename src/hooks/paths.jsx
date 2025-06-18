@@ -42,13 +42,13 @@ export const navList = [
     {
         id: 4,
         title: "Contacts",
-        path: paths.overviwe,
+        path: paths.contacts,
         icon: <ContactIcon />
     },
     {
         id: 5,
         title: "Agents",
-        path: paths.contacts,
+        path: paths.agents,
         icon: <AgentIcon />
     },
     {
@@ -95,13 +95,13 @@ export const pageRouteList = [
     {
         id: 4,
         title: "Contacts",
-        path: paths.overviwe,
+        path: paths.contacts,
         element: <Contacts />
     },
     {
         id: 5,
         title: "Agents",
-        path: paths.contacts,
+        path: paths.agents,
         element: <Agents />
     },
     {

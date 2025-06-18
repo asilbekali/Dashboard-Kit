@@ -3,3 +3,18 @@
 body {
     overflow: hidden;
 }
+
+
+.active{
+    color: #DDE2FF;
+    background-color: rgba(159, 162, 180, 4%);
+}
+
+.active::before{
+    content: "";
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    background-color: #DDE2FF;
+    left: 0;
+}

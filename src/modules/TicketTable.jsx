@@ -1,5 +1,6 @@
 import React from 'react'
 import Avatar from "../assets/imgs/avatar.svg"
+import Priority from '../components/Priority'
 
 const TicketTable = () => {
     return (
@@ -12,7 +13,7 @@ const TicketTable = () => {
                     <th className='text-start ps-8 pb-[11px] border-b-[1.5px] border-[#DFE0EB]'>Priority</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className='w-full'>
                 <tr className='hover:shadow-lg hover:duration-200 duration-200'>
                     <td className='flex space-x-[24px]  border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
                         <img className='w-[54px] h-[54px]' src={Avatar} alt="avatar" width={54} height={54} />
@@ -36,12 +37,11 @@ const TicketTable = () => {
                         </div>
                     </td>
 
-                    <td className='space-x-[24px]  border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
-                        <div>
-                            <strong className='font-semibold text-[14px] text-[#252733]'>May 26, 2019</strong>
-                            <p className='text-[12px]'>6:30 PM</p>
-                        </div>
+                    <td className='space-x-[24px] border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
+                        <Priority id={1} />
                     </td>
+
+
                 </tr>
 
             </tbody>

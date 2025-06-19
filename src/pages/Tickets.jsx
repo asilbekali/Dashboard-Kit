@@ -11,12 +11,8 @@ const Tickets = () => {
         <h2 className='font-semibold text-lg text-gray-800'>All Tickets</h2>
         <div className='flex items-center gap-4'>
           <TableTopAction />
-          <button
-            onClick={() => navigate("create")}
-            className='py-2 px-6 rounded-full bg-green-600 text-white font-medium shadow-md hover:bg-green-500 hover:shadow-lg transition duration-200'
-          >
-            Add Ticket
-          </button>
+          <button onClick={() => navigate("create")} 
+          className='py-2 px-6 rounded-full bg-green-600 text-white font-medium shadow-md hover:bg-green-500 hover:shadow-lg transition duration-200'>Add Ticket</button>
         </div>
       </div>
       <TicketTable />

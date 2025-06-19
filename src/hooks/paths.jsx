@@ -72,6 +72,7 @@ export const navList = [
         icon: <SubIcon />
     },
 
+
 ]
 
 
@@ -127,7 +128,7 @@ export const pageRouteList = [
     },
     {
         id: 9,
-        title: "Create",
+        title: "Create ticket",
         path: paths.createtickets,
         element: <Create />
     },

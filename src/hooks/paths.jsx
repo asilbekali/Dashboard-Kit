@@ -1,5 +1,5 @@
 import React from "react"
-import { AgentIcon, ArticleIcon, ContactIcon, IdeaIcon, OverviweIcon, SettingsIcon,  SubIcon,  TiscketIcon } from "../assets/icons"
+import { AgentIcon, ArticleIcon, ContactIcon, IdeaIcon, OverviweIcon, SettingsIcon, SubIcon, TiscketIcon } from "../assets/icons"
 import Subscription from "../pages/Subscription"
 import Overview from "../pages/Overview"
 import Tickets from "../pages/Tickets"
@@ -8,6 +8,7 @@ import Contacts from "../pages/Contacts"
 import Agents from "../pages/Agents"
 import Articles from "../pages/Articles"
 import Settings from "../pages/Settings"
+import Create from "../pages/Create"
 export const paths = {
     overviwe: "/",
     tickets: "/tickets",
@@ -16,7 +17,8 @@ export const paths = {
     agents: "/agents",
     articles: "/articles",
     settings: "/settings",
-    subscription: "/subscription"
+    subscription: "/subscription",
+    createtickets: "/tickets/create",
 }
 
 
@@ -61,7 +63,7 @@ export const navList = [
         id: 7,
         title: "Settings",
         path: paths.settings,
-        icon: < SettingsIcon/>
+        icon: < SettingsIcon />
     },
     {
         id: 8,
@@ -69,6 +71,9 @@ export const navList = [
         path: paths.subscription,
         icon: <SubIcon />
     },
+
+
+
 ]
 
 
@@ -121,6 +126,12 @@ export const pageRouteList = [
         title: "Subscription",
         path: paths.subscription,
         element: <Subscription />
+    },
+    {
+        id: 9,
+        title: "Create",
+        path: paths.createtickets,
+        element: <Create />
     },
 
 ]

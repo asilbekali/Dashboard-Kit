@@ -1,6 +1,7 @@
 import React from 'react'
 import Avatar from "../assets/imgs/avatar.svg"
 import Priority from '../components/Priority'
+import { MoreIcon } from '../assets/icons'
 
 const TicketTable = () => {
     return (
@@ -38,12 +39,12 @@ const TicketTable = () => {
                     </td>
 
                     <td className='space-x-[24px] border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
-                        <Priority id={1} />
+                        <div className='flex items-center gap-[30px]'>
+                            <Priority id={1} />
+                            <MoreIcon />
+                        </div>
                     </td>
-
-
                 </tr>
-
             </tbody>
         </table>
     )

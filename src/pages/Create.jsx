@@ -8,9 +8,7 @@ const Create = () => {
       <div className="flex justify-between w-full max-w-4xl mb-8">
         <button
           onClick={() => navigate(-1)}
-          className="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded shadow-lg transition"
-        >
-          Back
+          className="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded shadow-lg transition">Back
         </button>
         <h1 className="text-2xl font-semibold text-gray-800">Flight Form</h1>
       </div>
@@ -31,8 +29,7 @@ const Create = () => {
             <label htmlFor="campaign" className="block text-gray-700 font-medium">Choose Level</label>
             <select
               id="campaign"
-              className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3"
-            >
+              className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3">
               <option value="medium">Medium</option>
               <option value="low">Low</option>
               <option value="high">High</option>

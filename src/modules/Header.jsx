@@ -41,7 +41,7 @@ const Header = () => {
         </div>
 
         <button
-          className='p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition relative'
+          className='p-2  rounded-full bg-gray-200 hover:bg-gray-300 transition relative'
           onClick={() => setShowNotifications(!showNotifications)}
         >
           <NotfiIcon className='text-gray-600' />

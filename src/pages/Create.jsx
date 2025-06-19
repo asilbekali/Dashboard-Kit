@@ -5,7 +5,6 @@ const Create = () => {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center p-8 bg-[rgba(221,226,255, 4)] min-h-screen">
-      {/* Header */}
       <div className="flex justify-between w-full max-w-4xl mb-8">
         <button
           onClick={() => navigate(-1)}
@@ -16,9 +15,7 @@ const Create = () => {
         <h1 className="text-2xl font-semibold text-gray-800">Flight Form</h1>
       </div>
 
-      {/* Form Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl">
-        {/* Left Section */}
         <div className="space-y-6">
           <div>
             <label htmlFor="comment" className="block text-gray-700 font-medium">Enter Comment</label>
@@ -31,17 +28,19 @@ const Create = () => {
           </div>
 
           <div>
-            <label htmlFor="name" className="block text-gray-700 font-medium">Enter Name</label>
-            <input
-              id="name"
-              type="text"
-              placeholder="Enter..."
+            <label htmlFor="campaign" className="block text-gray-700 font-medium">Choose Level</label>
+            <select
+              id="campaign"
               className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3"
-            />
+            >
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+              <option value="high">High</option>
+            </select>
           </div>
 
           <div>
-            <label htmlFor="flyingDate" className="block text-gray-700 font-medium">Choose Flying Date</label>
+            <label htmlFor="flyingDate" className="block text-gray-700 font-medium">Enter Flying Date</label>
             <input
               id="flyingDate"
               type="date"
@@ -50,7 +49,6 @@ const Create = () => {
           </div>
         </div>
 
-        {/* Right Section */}
         <div className="space-y-6">
           <div>
             <label htmlFor="yourName" className="block text-gray-700 font-medium">Enter Your Name</label>
@@ -73,19 +71,19 @@ const Create = () => {
 
           <div>
             <label htmlFor="photo" className="block text-gray-700 font-medium">Upload Your Photo</label>
-            <input accept='.png'
+            <input
               id="photo"
               type="file"
+              accept=".png"
               className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3"
             />
           </div>
-
         </div>
         <button
-            className="w-[845px] bg-green-600 text-white py-3 rounded-lg shadow-lg hover:bg-green-500 transition"
-          >
-            Submit
-          </button>
+          className="w-full bg-green-600 text-white py-3 rounded-lg shadow-lg hover:bg-green-500 transition md:col-span-2"
+        >
+          Submit
+        </button>
       </div>
     </div>
   );

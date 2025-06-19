@@ -72,8 +72,6 @@ export const navList = [
         icon: <SubIcon />
     },
 
-
-
 ]
 
 

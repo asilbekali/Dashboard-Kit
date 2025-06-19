@@ -1,45 +1,45 @@
-import React from 'react'
-import Avatar from "../assets/imgs/avatar.svg"
-import Priority from '../components/Priority'
-import { MoreIcon } from '../assets/icons'
+import React from 'react';
+import Avatar from "../assets/imgs/avatar.svg";
+import Priority from '../components/Priority';
+import { MoreIcon } from '../assets/icons';
 
 const TicketTable = () => {
     return (
-        <table className='w-full text-[#9FA2B4] text-[14px] font-bold '>
-            <thead>
-                <tr className='text-start'>
-                    <th className='text-start ps-8 pb-[11px] border-b-[1.5px] border-[#DFE0EB]'>Ticket details</th>
-                    <th className='text-start ps-8 pb-[11px] border-b-[1.5px] border-[#DFE0EB]'>Customer name</th>
-                    <th className='text-start ps-8 pb-[11px] border-b-[1.5px] border-[#DFE0EB]'>Date</th>
-                    <th className='text-start ps-8 pb-[11px] border-b-[1.5px] border-[#DFE0EB]'>Priority</th>
+        <table className='w-full text-gray-600 text-sm font-medium bg-white shadow-md rounded-lg overflow-hidden'>
+            <thead className='bg-gray-100'>
+                <tr>
+                    <th className='text-left py-4 px-6 border-b border-gray-300'>Ticket Details</th>
+                    <th className='text-left py-4 px-6 border-b border-gray-300'>Customer Name</th>
+                    <th className='text-left py-4 px-6 border-b border-gray-300'>Date</th>
+                    <th className='text-left py-4 px-6 border-b border-gray-300'>Priority</th>
                 </tr>
             </thead>
-            <tbody className='w-full'>
-                <tr className='hover:shadow-lg hover:duration-200 duration-200'>
-                    <td className='flex space-x-[24px]  border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
-                        <img className='w-[54px] h-[54px]' src={Avatar} alt="avatar" width={54} height={54} />
+            <tbody>
+                <tr className='hover:bg-gray-50 transition duration-200'>
+                    <td className='flex items-center gap-6 py-4 px-6 border-b border-gray-300'>
+                        <img className='w-12 h-12 rounded-full' src={Avatar} alt="avatar" />
                         <div>
-                            <p className='font-bold text-[#252733] text-[14px]'>Contact Email not Linked</p>
-                            <span>Updated 1 day ago</span>
+                            <p className='font-semibold text-gray-800'>Contact Email not Linked</p>
+                            <span className='text-gray-500 text-xs'>Updated 1 day ago</span>
                         </div>
                     </td>
 
-                    <td className='space-x-[24px]  border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
+                    <td className='py-4 px-6 border-b border-gray-300'>
                         <div>
-                            <strong className='font-semibold text-[14px] text-[#252733]'>Tom Cruise</strong>
-                            <p>on 24.05.2019</p>
+                            <p className='font-semibold text-gray-800'>Tom Cruise</p>
+                            <span className='text-gray-500 text-xs'>on 24.05.2019</span>
                         </div>
                     </td>
 
-                    <td className='space-x-[24px]  border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
+                    <td className='py-4 px-6 border-b border-gray-300'>
                         <div>
-                            <strong className='font-semibold text-[14px] text-[#252733]'>May 26, 2019</strong>
-                            <p className='text-[12px]'>6:30 PM</p>
+                            <p className='font-semibold text-gray-800'>May 26, 2019</p>
+                            <span className='text-gray-500 text-xs'>6:30 PM</span>
                         </div>
                     </td>
 
-                    <td className='space-x-[24px] border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
-                        <div className='flex items-center gap-[30px]'>
+                    <td className='py-4 px-6 border-b border-gray-300'>
+                        <div className='flex items-center gap-4'>
                             <Priority id={1} />
                             <MoreIcon />
                         </div>
@@ -47,7 +47,7 @@ const TicketTable = () => {
                 </tr>
             </tbody>
         </table>
-    )
-}
+    );
+};
 
-export default TicketTable
+export default TicketTable;

@@ -1,47 +1,63 @@
-import { useLocation } from 'react-router-dom'
-import { navList } from '../hooks/paths'
-import { LupaIcon, NotfiIcon } from '../assets/icons'
-import { useState } from 'react'
+import { useLocation } from 'react-router-dom';
+import { navList } from '../hooks/paths';
+import { LupaIcon, NotfiIcon } from '../assets/icons';
+import { useState } from 'react';
 
 const Header = () => {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
-  const [showInput, setShowInput] = useState(false)
-  const [inputValue, setInputValue] = useState('')
+  const [showInput, setShowInput] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
   function handleBlur() {
     setTimeout(() => {
-      setShowInput(false)
-      setInputValue('')
-    }, 2000)
+      setShowInput(false);
+      setInputValue('');
+    }, 2000);
   }
 
   return (
-    <div className='flex items-center justify-between mb-[58px]'>
-      <strong className='font-bold text-[24px] text-[#252733]'>{navList.find(item => item.path === pathname)?.title || 'Unknown Page'}</strong>
-      <div className='flex items-center justify-between gap-[32px]'>
-
-        <div className='flex items-center gap-[15px]'>
-          <button className={`${showInput ? "hidden" : ""} cursor-pointer`} onClick={() => setShowInput(true)}>
-            {<LupaIcon />}
+    <div className='flex items-center justify-between mb-14 px-8 py-4 bg-white shadow-lg rounded-lg'>
+      <strong className='font-bold text-2xl text-gray-800'>
+        {navList.find(item => item.path === pathname)?.title || 'Unknown Page'}
+      </strong>
+      <div className='flex items-center gap-8'>
+        {/* Search Section */}
+        <div className='flex items-center gap-4'>
+          <button 
+            className={`p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition ${showInput ? "hidden" : "block"}`} 
+            onClick={() => setShowInput(true)}
+          >
+            <LupaIcon className='text-gray-600' />
           </button>
           <input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onBlur={handleBlur}
-            className={`bg-white rounded-[17px] border-[1px] outline-none ${showInput ? "pl-[10px] p-[5px] border-slate-200 w-[180px] focus:shadow-sm duration-300 shadow-blue-950" : "w-0 border-transparent duration-300"}`}
+            className={`rounded-full border focus:ring-2 focus:ring-blue-500 transition-all duration-300 ${showInput ? "pl-4 py-2 border-gray-300 w-48 shadow" : "w-0 border-transparent"}`}
             type="text"
-            placeholder='Searching'
+            placeholder='Search...'
           />
         </div>
 
-        <button className='cursor-pointer'>{<NotfiIcon />}</button>
-        <span className='w-[1px] h-[32px] inline-block bg-[#DFE0EB]'></span>
-        <p className='font-semibold'>Jones Ferdinand</p>
-        <img className='cursor-pointer left-[1078px]' src="src/assets/imgs/avatar.svg" alt="avatar" width={54} height={54} />
+        {/* Notification Icon */}
+        <button className='p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition'>
+          <NotfiIcon className='text-gray-600' />
+        </button>
+        
+        {/* Divider */}
+        <span className='w-px h-8 bg-gray-300'></span>
+        
+        {/* User Info */}
+        <p className='font-medium text-gray-800'>Jones Ferdinand</p>
+        <img 
+          className='w-12 h-12 rounded-full border-2 border-gray-300 hover:border-blue-500 transition' 
+          src="src/assets/imgs/avatar.svg" 
+          alt="avatar"
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

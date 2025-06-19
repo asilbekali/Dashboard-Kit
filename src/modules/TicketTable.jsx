@@ -29,9 +29,20 @@ const TicketTable = () => {
                         </div>
                     </td>
 
+                    <td className='space-x-[24px]  border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
+                        <div>
+                            <strong className='font-semibold text-[14px] text-[#252733]'>May 26, 2019</strong>
+                            <p className='text-[12px]'>6:30 PM</p>
+                        </div>
+                    </td>
 
+                    <td className='space-x-[24px]  border-b-[1.5px] border-[#DFE0EB] cursor-pointer pl-[31px] pt-[26px] pb-[26px]'>
+                        <div>
+                            <strong className='font-semibold text-[14px] text-[#252733]'>May 26, 2019</strong>
+                            <p className='text-[12px]'>6:30 PM</p>
+                        </div>
+                    </td>
                 </tr>
-
 
             </tbody>
         </table>

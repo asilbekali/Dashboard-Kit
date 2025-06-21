@@ -2,6 +2,7 @@ import React from 'react';
 import Avatar from "../assets/imgs/avatar.svg";
 import Priority from '../components/Priority';
 import { MoreIcon } from '../assets/icons';
+import TicketIteam from '../components/TicketIteam';
 
 const TicketTable = () => {
     return (
@@ -15,7 +16,8 @@ const TicketTable = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr className='hover:bg-[rgba(176,187,255,0.35)]  transition duration-200 cursor-pointer'>
+                <TicketIteam/>
+                {/* <tr className='hover:bg-[rgba(176,187,255,0.35)]  transition duration-200 cursor-pointer'>
                     <td className='flex items-center gap-6 py-4 px-6 border-b border-gray-300'>
                         <img className='w-12 h-12 rounded-full' src={Avatar} alt="avatar" />
                         <div>
@@ -44,7 +46,7 @@ const TicketTable = () => {
                             <MoreIcon />
                         </div>
                     </td>
-                </tr>
+                </tr> */}
             </tbody>
         </table>
     );

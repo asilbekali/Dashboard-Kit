@@ -1,14 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Create = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    comment: '',
+    campaign: 'medium',
+    flyingDate: '',
+    yourName: '',
+    flightTime: '',
+    photo: null,
+  });
+
+  const handleChange = (e) => {
+    const { id, value, type, files } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: type === 'file' ? files[0]?.name : value,
+    }));
+  };
+
+  const isValidForm = () => {
+    const { comment, campaign, flyingDate, yourName, flightTime, photo } = formData;
+    return comment && campaign && flyingDate && yourName && flightTime && photo;
+  };
+
+  const handleSubmit = () => {
+    if (!isValidForm()) {
+      alert("Iltimos, barcha maydonlarni to‘ldiring.");
+      return;
+    }
+
+    try {
+      const existingData = JSON.parse(localStorage.getItem('flightFormData')) || [];
+
+      const updatedData = Array.isArray(existingData)
+        ? [...existingData, formData]
+        : [existingData, formData];
+
+      localStorage.setItem('flightFormData', JSON.stringify(updatedData));
+
+      alert('Form data has been added to localStorage!');
+
+      navigate(-1); // Oldingi sahifaga qaytish
+    } catch (error) {
+      console.error("Error saving data to localStorage:", error);
+      alert("Xatolik yuz berdi.");
+    }
+  };
+
   return (
-    <div className="flex flex-col items-center p-8 bg-[rgba(221,226,255, 4)] min-h-screen">
+    <div className="flex flex-col items-center p-8 bg-[rgba(221,226,255,0.4)] min-h-screen">
       <div className="flex justify-between w-full max-w-4xl mb-8">
         <button
           onClick={() => navigate(-1)}
-          className="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded shadow-lg transition">Back
+          className="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded shadow-lg transition"
+        >
+          Back
         </button>
         <h1 className="text-2xl font-semibold text-gray-800">Flight Form</h1>
       </div>
@@ -22,6 +70,8 @@ const Create = () => {
               type="text"
               placeholder="Enter..."
               className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3"
+              value={formData.comment}
+              onChange={handleChange}
             />
           </div>
 
@@ -29,7 +79,10 @@ const Create = () => {
             <label htmlFor="campaign" className="block text-gray-700 font-medium">Choose Level</label>
             <select
               id="campaign"
-              className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3">
+              className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3"
+              value={formData.campaign}
+              onChange={handleChange}
+            >
               <option value="medium">Medium</option>
               <option value="low">Low</option>
               <option value="high">High</option>
@@ -42,6 +95,8 @@ const Create = () => {
               id="flyingDate"
               type="date"
               className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3"
+              value={formData.flyingDate}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -54,6 +109,8 @@ const Create = () => {
               type="text"
               placeholder="Enter..."
               className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3"
+              value={formData.yourName}
+              onChange={handleChange}
             />
           </div>
 
@@ -63,6 +120,8 @@ const Create = () => {
               id="flightTime"
               type="time"
               className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3"
+              value={formData.flightTime}
+              onChange={handleChange}
             />
           </div>
 
@@ -73,10 +132,13 @@ const Create = () => {
               type="file"
               accept=".png"
               className="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500 p-3"
+              onChange={handleChange}
             />
           </div>
         </div>
+
         <button
+          onClick={handleSubmit}
           className="w-full bg-green-600 text-white py-3 rounded-lg shadow-lg hover:bg-green-500 transition md:col-span-2"
         >
           Submit
